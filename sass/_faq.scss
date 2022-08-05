@@ -1,0 +1,86 @@
+.faq-style-one {
+
+    .container {
+        padding-bottom: 120px;
+
+        @media(min-width: 1200px) {
+            max-width: 920px;
+        }
+    }
+
+    .block-title {
+        padding-top: 120px;
+    }
+
+    .accrodion-grp {
+        .accrodion {
+            border: 1px solid #EAEAEA;
+            padding: 30.5px 40px;
+
+            +.accrodion {
+                margin-top: 20px;
+            }
+
+            .accrodion-title {
+                cursor: pointer;
+
+                h4 {
+                    margin: 0;
+                    font-size: 20px;
+                    font-weight: 400;
+                    padding: 0px 0;
+                    padding-top: 0;
+                    padding-left: 0px;
+                    position: relative;
+                    color: #273167;
+                    transition: all .4s ease;
+
+                    &:before {
+                        font-family: 'FontAwesome';
+                        content: '\f067';
+                        display: inline-block;
+                        width: 22px;
+                        height: 22px;
+                        line-height: 22px;
+                        border-radius: 50%;
+                        text-align: center;
+                        font-size: 14px;
+                        color: #273167;
+                        position: absolute;
+                        top: 50%;
+                        right: 0px;
+                        transform: translateY(-50%);
+                        transition: all .4s ease;
+                    }
+                }
+            }
+
+            .accrodion-content {
+                .inner {
+                    // padding: 20px 30px 15px;
+                    margin-top: 30px;
+
+                    p {
+                        margin: 0;
+                        font-size: 16px;
+                        line-height: 30px;
+                        color: #777B92;
+                    }
+                }
+            }
+
+            &.active {
+                .accrodion-title {
+                    h4 {
+                        color: #E94FCA;
+
+                        &:before {
+                            content: '\f068';
+                            color: #E94FCA;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

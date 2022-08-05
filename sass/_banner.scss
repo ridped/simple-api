@@ -1,0 +1,277 @@
+.banner-style-one {
+    position: relative;
+    padding-top: 300px;
+    padding-bottom: 220px;
+    background: #fff url(../images/banner-bg-1-1.png) top right no-repeat;
+
+    &:before,
+    &:after {
+        content: '';
+        width: 318px;
+        height: 318px;
+        border-radius: 50%;
+        border: 43px solid;
+        position: absolute;
+        animation: BannercircleRotate 5s ease-in-out 0s infinite alternate;
+    }
+
+    @keyframes BannercircleRotate {
+        0% {
+            -webkit-transform: rotate(0);
+            transform: rotate(0);
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            opacity: .5;
+        }
+    }
+
+    &:before {
+        border-color: #FFF3FD;
+        bottom: 10%;
+        right: 32%;
+    }
+
+    &:after {
+        border-color: #F3FAFF;
+        top: 10%;
+        left: 10%;
+    }
+
+    .banner-mock {
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        animation: bannerImgBounce 5s ease-in-out 0s infinite alternate;
+
+    }
+
+    @keyframes bannerImgBounce {
+        0% {
+            -webkit-transform: translateY(0) translateX(0);
+            transform: translateY(0) translateX(0);
+        }
+
+        100% {
+            -webkit-transform: translateY(-20px) translateX(-20px);
+            transform: translateY(-20px) translateX(-20px);
+        }
+    }
+
+    [class*=bubble-] {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        position: absolute;
+        background-color: #ede8ff;
+        border: 1px solid #a98fff;
+        animation-name: bubbleMover;
+        animation-duration: 9s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        perspective: 100px;
+
+        @keyframes bubbleMover {
+            0% {
+                transform: translateY(0px) translateX(0) rotate(0);
+            }
+
+            30% {
+                transform: translateY(30px) translateX(50px) rotate(15deg);
+                transform-origin: center center;
+            }
+
+            50% {
+                transform: translateY(50px) translateX(100px) rotate(45deg);
+                transform-origin: right bottom;
+            }
+
+            80% {
+                transform: translateY(30px) translateX(50px) rotate(15deg);
+                transform-origin: left top;
+            }
+
+            100% {
+                transform: translateY(0px) translateX(0) rotate(0);
+                transform-origin: center center;
+            }
+        }
+    }
+
+    .bubble-1 {
+        background-color: #fff7e0;
+        border-color: #ffdd83;
+        top: 10px;
+        left: 20px;
+    }
+
+    .bubble-2 {
+        background-color: #fff1ec;
+        border-color: #ffb59d;
+        bottom: 30px;
+        left: 10%;
+    }
+
+    .bubble-3 {
+        background-color: #ebf3ff;
+        border-color: #b9d4ff;
+        top: 40px;
+        left: 40%;
+    }
+
+    .bubble-4 {
+        background-color: #ddffe4;
+        border-color: #93ff6d;
+        top: 10px;
+        right: 40%;
+    }
+
+    .bubble-5 {
+        background-color: #ede8ff;
+        border-color: #a98fff;
+        bottom: 30px;
+        right: 25%;
+    }
+
+    .bubble-6 {
+        background-color: #ffe8fb;
+        border-color: #ffa6ef;
+        top: 40%;
+        right: 10%;
+    }
+
+    .content-block {
+        position: relative;
+        z-index: 10;
+
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h3 {
+            color: #273167;
+            font-size: 60px;
+            line-height: 70px;
+            font-weight: 500;
+            margin-bottom: 40px;
+        }
+
+        p {
+            color: #777B92;
+            font-size: 18px;
+            line-height: 34px;
+            margin-bottom: 55px;
+        }
+
+        .banner-btn {
+            display: inline-block;
+
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(234, 234, 234);
+            border-radius: 4px;
+            box-shadow: 0px 15px 30px 0px rgba(119, 123, 146, 0.1);
+            vertical-align: middle;
+            color: #777B92;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 1em;
+            padding: 22.5px 0;
+            padding-left: 73px;
+            padding-right: 53px;
+            position: relative;
+            background-color: #fff;
+            transition: all .4s ease;
+
+            span {
+                font-size: 18px;
+                display: block;
+                line-height: 1em;
+                margin-top: 5px;
+            }
+
+            i {
+                font-size: 30px;
+                color: #777B92;
+                position: absolute;
+                top: 50%;
+                left: 40px;
+                transform: translateY(-50%);
+                transition: all .4s ease;
+            }
+
+            +.banner-btn {
+                margin-left: 16px;
+            }
+
+            &:hover {
+                color: #fff;
+                background-color: #E94FCA;
+                border-color: #E94FCA;
+
+                i {
+                    color: #fff;
+                }
+            }
+
+        }
+    }
+
+    &.home-page-two {
+        padding-bottom: 277px;
+        background: #fff url(../images/banner-bg-1-2.png) top right no-repeat;
+        background-size: cover;
+        margin-bottom: 60px;
+
+        &:before {
+            border-color: rgba(#fff, .04);
+        }
+
+        &:after {
+            border-color: rgba(#fff, .02);
+        }
+
+        [class*=bubble-] {
+            background-color: transparent !important;
+            border-width: 2px;
+        }
+
+        .banner-mock {
+            right: 0;
+            top: 20%;
+        }
+
+        .content-block {
+            h3 {
+                color: #fff;
+            }
+
+            p {
+                color: #D6C9E4;
+            }
+
+            .banner-btn {
+                color: #fff;
+                border-style: solid;
+                border-width: 1px;
+                border-color: rgb(255, 255, 255);
+                border-radius: 3px;
+                background-color: transparent;
+                box-shadow: 0px 15px 30px 0px rgba(255, 255, 255, 0.1);
+
+                i {
+                    color: #fff;
+                }
+
+                &:hover {
+                    background-color: #E94FCA;
+                    border-color: #E94FCA;
+                }
+            }
+        }
+    }
+}

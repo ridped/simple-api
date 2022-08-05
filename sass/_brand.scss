@@ -1,0 +1,22 @@
+.brand-carousel-one {
+	padding: 119.5px 0;
+	padding-left: 48px;
+	padding-right: 48px;
+	.item {
+		img {
+			width: auto;
+			max-width: none;
+			margin-left: auto;
+			margin-right: auto;
+			opacity: .4;
+			transition: all .4s ease;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+	.owl-dots,
+	.owl-nav {
+		display: none;
+	}
+}

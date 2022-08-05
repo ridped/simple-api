@@ -1,0 +1,194 @@
+.feature-style-one {
+    padding-top: 170px;
+    background: #FFFFFF url(../images/bg-curve-1-2.png) center top no-repeat;
+    background-size: cover;
+    margin-top: -90px;
+
+    .container {
+        padding-bottom: 120px;
+
+        hr.style-one {
+            margin-bottom: 130px;
+        }
+    }
+
+    .image-block {
+        margin-top: -50px;
+        position: relative;
+        right: -20px;
+        animation: featureImgBounce 5s ease-in-out 0s infinite alternate;
+    }
+
+    @keyframes featureImgBounce {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0)
+        }
+
+        100% {
+            -webkit-transform: translateY(-30px);
+            transform: translateY(-30px)
+        }
+    }
+
+    .content-block {
+        .block-title {
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 24px;
+            color: #777B92;
+            line-height: 40px;
+            margin: 0;
+            margin-bottom: 46px;
+        }
+
+        ul.feature-lists {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 54px;
+
+            li {
+                position: relative;
+                color: #777B92;
+                font-size: 18px;
+                padding-left: 35px;
+
+                +li {
+                    margin-top: 10px;
+                }
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    color: #E94FCA;
+                }
+            }
+        }
+
+        .feature-btn {
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(234, 234, 234);
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 15px 30px 0px rgba(119, 123, 146, 0.1);
+            display: inline-block;
+            vertical-align: middle;
+            color: #777B92;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 16px 42.5px;
+            transition: all .4s ease;
+
+            &:hover {
+                background-color: #E94FCA;
+                color: #fff;
+                border-color: #E94FCA;
+            }
+        }
+    }
+}
+
+.feature-style-two {
+    padding-top: 120px;
+
+    .image-block {
+        margin-top: -50px;
+        position: relative;
+        left: -50px;
+		animation: featureImgBounce 5s ease-in-out 0s infinite alternate;
+
+
+        &:before,
+        &:after {
+            content: '';
+            width: 318px;
+            height: 318px;
+            border-radius: 50%;
+            border: 43px solid #FAFAFA;
+            position: absolute;
+        }
+
+        &:before {
+            top: 50px;
+            left: 40px;
+        }
+
+        &:after {
+            bottom: 50px;
+            right: -10px;
+        }
+
+        img {
+            position: relative;
+            z-index: 10;
+        }
+    }
+
+    .content-block {
+        .block-title {
+            margin-bottom: 50px;
+        }
+
+        p {
+            font-size: 24px;
+            color: #777B92;
+            line-height: 40px;
+            margin: 0;
+            margin-bottom: 46px;
+        }
+
+        ul.feature-lists {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            margin-bottom: 54px;
+
+            li {
+                position: relative;
+                color: #777B92;
+                font-size: 18px;
+                padding-left: 35px;
+
+                +li {
+                    margin-top: 10px;
+                }
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    color: #E94FCA;
+                }
+            }
+        }
+
+        .feature-btn {
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(234, 234, 234);
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 15px 30px 0px rgba(119, 123, 146, 0.1);
+            display: inline-block;
+            vertical-align: middle;
+            color: #777B92;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 16px 42.5px;
+            transition: all .4s ease;
+
+            &:hover {
+                background-color: #E94FCA;
+                color: #fff;
+                border-color: #E94FCA;
+            }
+        }
+    }
+}
