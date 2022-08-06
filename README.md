@@ -28,9 +28,9 @@
 	1. Clone using Git / Download manually this repository.
 	2. UPLOAD File ke hosting
 	3. Edit koneksi database di file config/koneksi.php
-  4. Edit domain di file config/koneksi.php
-  5. Edit api safelinku di file config/koneksi.php < shortlink untuk pengaktifan apikey
-  6. Edit sender & key_waysender di file config/koneksi.php < untuk notifikasi wa
+  	4. Edit domain di file config/koneksi.php
+  	5. Edit api safelinku di file config/koneksi.php < shortlink untuk pengaktifan apikey
+  	6. Edit sender & key_waysender di file config/koneksi.php < untuk notifikasi wa
 	7. Done.
 	
 ### Prerequisites
