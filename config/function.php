@@ -111,6 +111,11 @@ function way_key($length) {
 }
 // ini lomgin, simple ae lah ya :v
 if (isset($_POST['login'])) {
+    if ($_SESSION['otp']) {
+        $_SESSION['otp'] = "";
+        $_SESSION['no_wa'] = "";
+        $_SESSION['lupa_pass'] = "";
+    }
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = $_POST['password'];
     $p = sha1($password);
@@ -124,6 +129,11 @@ if (isset($_POST['login'])) {
 }
 // ini daptar, simple ae lah ya :v
 if (isset($_POST['daftar'])) {
+    if ($_SESSION['otp']) {
+        $_SESSION['otp'] = "";
+        $_SESSION['no_wa'] = "";
+        $_SESSION['lupa_pass'] = "";
+    }
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = $_POST['password'];
     if (strlen($username) < 5 AND strlen($password) < 5) {
@@ -161,6 +171,58 @@ Jika tidak mau seperti ini hubungi admin untuk membeli paket premium tanpa perlu
             }
         } else {
             $error = "Data yang anda masukan sudah terdaftar!";
+        }
+    }
+}
+
+// simple lupa pass :v
+if (isset($_POST['lupa_pass'])) {
+    $no_wa = $_POST['no_wa'];
+    $error = false;
+    if (strlen($no_wa) < 8) {
+        $error = true;
+        $error_msg = "Nothing.";
+    } else {
+        // check
+        if ($con->query("SELECT * FROM way_account WHERE no_wa = '$no_wa'")->num_rows == 0) {
+            $error = true;
+            $error_msg = "Akun tidak ditemukan!.";
+        } else {
+            $_SESSION['lupa_pass'] = true;
+            $_SESSION['otp'] = rand(10000,99999);
+            $_SESSION['no_wa'] = $no_wa;
+            $sendNotif = sendNotif($no_wa, '', 'Your OTP API is : ' . $_SESSION['otp'], 'https://www.ridped.com', 'Official RIDPED');
+            redirect($domain . "/lupa_pass");
+        }
+    }
+}
+
+// simple lupa pass :v
+if (strlen($_SESSION['otp']) > 3) {
+    if (isset($_POST['change_pass'])) {
+        $no_wa = $_SESSION['no_wa'];
+        $otp = $_SESSION['otp'];
+        $otp_receiver = $_POST['otp_receiver'];
+        $new_pass = $_POST['new_pass'];
+        $error = false;
+        if ($otp == $otp_receiver) {
+            if (strlen($new_pass) < 5) {
+                $error = true;
+                $error_msg = "Jumlah password terlalu sedikit.";
+            } else {
+                $p = sha1($new_pass);
+                if ($con->query("UPDATE way_account SET password = '$p' WHERE no_wa = '$no_wa'") == true) {
+                    sendNotif($no_wa, '', 'Password has been changed!', 'https://www.ridped.com', 'Official RIDPED');
+                    session_destroy();
+                    redirect($domain . "/login");
+                } else {
+                    $error = true;
+                    $error_msg = "Ada kesalahan system.";
+                }
+            }
+        } else {
+            $error = true;
+            $error_msg = "OTP tidak valid!";
         }
     }
 }
