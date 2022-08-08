@@ -66,15 +66,9 @@ if (ceksess() !== 0) {
 
             <div class="auth-submit">
                 <button type="submit" class="btn btn-primary enter-btn" name="login">Login</button>
-                <a href="#" class="auth-forgot-password float-end">Forgot password?</a>
+                <a href="lupa_pass" class="auth-forgot-password float-end">Forgot password?</a>
             </div>
         </form>
-            <div class="divider"></div>
-            <div class="auth-alts">
-                <a href="#" class="auth-alts-google"></a>
-                <a href="#" class="auth-alts-facebook"></a>
-                <a href="#" class="auth-alts-twitter"></a>
-            </div>
         </div>
     </div>
     
