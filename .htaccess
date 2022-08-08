@@ -10,6 +10,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^api/?$ api.php [NC,L]
 RewriteRule ^login/?$ page/masuk.php [NC,L]
 RewriteRule ^daftar/?$ page/sign_up.php [NC,L]
+RewriteRule ^lupa_pass/?$ page/lupa_pass.php [NC,L]
 RewriteRule ^logout/?$ page/logout.php [NC,L]
 RewriteRule ^welcome/?$ page/welcome.php [NC,L]
 RewriteRule ^404/?$ 404.html [NC,L]
