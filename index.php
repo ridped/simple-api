@@ -134,6 +134,9 @@ if (!empty($page)) {
                             <a href="<?php echo $domain;?>/api?feature=tebakgambar&apikey=YOUR-API">Tebak Gambar</a>
                         </li>
                         <li>
+                            <a href="<?php echo $domain;?>/api?feature=tts&apikey=YOUR-API&text=Anjay&lang=id">TTS</a>
+                        </li>
+                        <li>
                             <a href="<?php echo $domain;?>/api?feature=asupan&apikey=YOUR-API">Asupan</a>
                         </li>
                         <li>
