@@ -33,9 +33,10 @@
   	6. Edit sender & key_waysender di file config/koneksi.php < untuk notifikasi wa
 	7. Done.
 
-## OPTIONAL CONFIG
+## IMPORTANT
 
-	1. Untuk mereset apikey user setiap hari / setiap bulan gunakan cronjob hit ke : domainmu.com/request/del.php
+	Untuk mereset apikey user setiap hari / setiap bulan gunakan cronjob hit ke : domainmu.com/request/del.php.
+	Tambahkan username user premium di request/del.php <- supaya tidak tereset apikey & status akun nya.
 	
 ### Prerequisites
 
