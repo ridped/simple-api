@@ -399,7 +399,23 @@ if (mysqli_num_rows($cekser) == '0') {
                         );
                         echo json_encode($responya);
                     }
-                } 
+                } else if ($feature == 'tts') {
+                    $text = urlencode($_GET['text'] ? $_GET['text'] : 'Kosong bang kosong');
+                    $lang = $_GET['lang'] ? $_GET['lang'] : 'id';
+                    $key = "selebew";
+                    $g = json_decode(file_get_contents("$api_nembak/tts?text=$text&lang=$lang&key=$key"), true);
+                    if ($g['status'] == true) {
+                        kurangi($apikey);
+                        addHit($apikey);
+                        echo json_encode($g);
+                    } else {
+                        $responya = array(
+                            "status"=> 404,
+                            "msg"=> "Ada kesalahan"
+                        );
+                        echo json_encode($responya);
+                    }
+                }
                 else {
                     $responya = array(
                         "status"=> false,
