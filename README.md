@@ -35,7 +35,7 @@
 
 ## OPTIONAL CONFIG
 
-	1. Untuk mereset apikey user setiap hari gunakan cronjob hit ke : domainmu.com/request/del.php
+	1. Untuk mereset apikey user setiap hari / setiap bulan gunakan cronjob hit ke : domainmu.com/request/del.php
 	
 ### Prerequisites
 
