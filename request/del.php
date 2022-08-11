@@ -5,9 +5,10 @@ while ($row = mysqli_fetch_assoc($ro)) {
     $apikey = $row['username'] . '-' . way_key(10);
     $username = $row['username'];
     $no_wa = $row['no_wa'];
-    if ($row['username'] == 'ridah') {
-        echo 'tidak akan kuhapus si ridah';
+    $premium = array("ridah", "usernameAKUN"); // tambah user premium disini:v supaya tidak tereset apikey & status akun nya kalo cronjob nya aktif:v simple aja :v
+    if (in_array($row['username'], $premium)) {
+        echo 'Premium';
     } else {
-    deactivated($row['username'], $apikey, $no_wa);
+        deactivated($row['username'], $apikey, $no_wa); // reset apikey + nonaktifkan.
     }
 }
