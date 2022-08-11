@@ -286,7 +286,9 @@ if (!empty($page)) {
     <audio src="https://ridped.com/way/begin.mp3" id="ridAudio" loop="loop"></audio>
     
 <script type="text/javascript">
-document.getElementById("ridAudio").play();
+window.onload = function() {
+  document.getElementById("ridAudio").play();
+}
 </script>
 
 <script
@@ -296,7 +298,7 @@ document.getElementById("ridAudio").play();
   
 <script>
     function rid_request_file() {
-        return 'https://www.api.ridped.com/request/req.php';
+        return "<?php echo $domain;?>/request/req.php";
     }
 </script>
 <script>
